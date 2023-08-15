@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  ---main-color: #7744d9;
+  ---global-text-color: #7a7a7a;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* default */
+.global-text {
+  color: var(---global-text-color);
+}
+
+.main-h {
+  font-size: 36px;
+}
+
+/* navbar design */
+.navbar {
+  position: sticky;
+  z-index: 100;
+  padding: 10px 0px;
+  background-color: #fff;
+  top: 0;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+}
+.navbar-brand {
+  margin-left: 100px;
+}
+
+.navbar-nav {
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  color: #000;
+  font-size: 15px;
+  transition: 0.6s;
+}
+
+.nav-link:hover {
+  color: #7744d9;
+}
+
+.nav-btn {
+  background-color: var(---main-color);
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 0;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: 1s;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  background-color: rgb(231, 82, 221);
+  color: #fff;
+}
+.navbar-toggler {
+  border: none;
+}
+.profile-section {
+  margin-right: 100px !important;
+}
+.dropdown {
+  list-style: none;
+}
+
+@media screen and (max-width: 754px) {
+  .navbar-nav {
+    align-items: baseline;
+  }
+  .nav-link {
+    color: #000;
+  }
+  .navbar-brand {
+    margin-left: 10px;
+  }
+  .profile-section {
+    margin-right: 0 !important;
+    margin-top: 20px;
+  }
+}
+/* navbar */
+
+footer {
+  background-color: #eff2f7;
+  padding: 78px 0 85px;
+}
+.footer-logo {
+  background-color: transparent;
+  border: none;
+}
+.footer-p {
+  font-size: 14px;
+}
+.footer-title {
+  font-size: 20px !important;
+  margin: 0 0 35px;
+}
+.links ul {
+  position: relative;
+}
+.links ul li a {
+  text-decoration: none;
+  position: relative;
+  font-size: 14px;
+  color: #7a7a7a;
+  margin-top: 6px;
+}
+.links ul li {
+  text-decoration: none;
+  position: relative;
+  font-size: 14px;
+  color: #7a7a7a;
+  margin-top: 6px;
+}
+.footer-icon {
+  color: #616161;
+}
+
+@media screen and (max-width: 767px) {
+  .main-h {
+    font-size: 26px;
+  }
+}
+
+.hero-bg {
+  position: relative;
+  height: 550px;
+  display: grid;
+  place-items: center;
+  background-image: url("C:\Users\hp\Desktop\DSL\client\public\images\bg-nen.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero-bg .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.hero-bg .text-wrapper {
+  position: relative;
+}
+.hero-bg .text-wrapper h2 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 31px;
+  text-align: center;
+}
+
+.hero-bg .text-wrapper ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-bg .text-wrapper ul li {
+  color: #fff;
+  margin: 0 6px;
+  text-transform: uppercase;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(41, 52, 92, 0.62);
+  top: 0;
+  left: 0;
+}
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 767px) {
+  .hero-bg {
+    height: 400px;
+  }
+  .hero-bg img {
+    /* Adjust the image width for mobile devices */
+    background-size: cover;
+  }
+
+  .hero-bg::before {
+    /* Adjust the overlay background color for mobile devices */
+    background-color: rgba(41, 52, 92, 0.8);
+  }
+}
+/* hero bg */
+
+/* Add this CSS to your existing style.css file or create a new CSS file and import it in your component. */

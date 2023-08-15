@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  ---main-color: #7744d9;
+  ---global-text-color: #7a7a7a;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+.admin-navs {
+  color: white;
+  text-align: start !important;
+}
+.admin-navs:hover {
+  color: white;
+}
+
+/* default */
+.global-text {
+  color: var(---global-text-color);
+}
