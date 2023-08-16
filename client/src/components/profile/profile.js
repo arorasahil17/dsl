@@ -20,6 +20,7 @@ const Profile = () => {
   useEffect(() => {
     // Simulate fetching user data from an API
     setTimeout(() => {
+      console.log(user);
       setFirstName(user ? user.firstName : "");
       setLastName(user ? user.lastName : "");
       setEmail(user ? user.email : "");

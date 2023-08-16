@@ -34,7 +34,11 @@ export const ADMIN_LOGIN_FAILURE = "ADMIN_LOGIN_FAILURE";
 export const ADMIN_AUTH_REQUEST = "ADMIN_AUTH_REQUEST";
 export const ADMIN_AUTH_SUCCESS = "ADMIN_AUTH_SUCCESS";
 export const ADMIN_AUTH_FAILURE = "ADMIN_AUTH_FAILURE";
-// Action creators
+export const SEND_MESSAGE_REQUEST = "SEND_MESSAGE_REQUEST";
+export const SEND_MESSAGE_SUCCESS = "SEND_MESSAGE_SUCCESS";
+export const SEND_MESSAGE_FAILURE = "SEND_MESSAGE_FAILURE";
+
+//* Action creators
 
 export const authRequest = () => ({ type: AUTH_REQUEST });
 
@@ -108,7 +112,7 @@ export const loginUser = (userData, navigate) => async (dispatch) => {
   dispatch(loginRequest());
   try {
     const response = await axios.post("/login", userData);
-    const user = response.data;
+    const user = response.data.user;
     dispatch(loginSuccess(user));
     const token = response.data.user.token;
 
@@ -344,5 +348,27 @@ export const adminAuth = (navigate) => async (dispatch) => {
   } catch (err) {
     console.log(err);
     dispatch(adminAuthFailure(err.message));
+  }
+};
+
+export const sendMessageRequest = () => ({ type: SEND_MESSAGE_REQUEST });
+
+export const sendMessageSuccess = () => ({ type: SEND_MESSAGE_SUCCESS });
+
+export const sendMessageFailure = (error) => ({
+  type: SEND_MESSAGE_FAILURE,
+  payload: error,
+});
+
+export const sendMessage = (messageData) => async (dispatch) => {
+  dispatch(sendMessageRequest());
+  try {
+    const response = await axios.post("/send/messsage", messageData);
+    if (response.data.success) {
+      dispatch(sendMessageSuccess());
+    }
+  } catch (err) {
+    console.log(err);
+    dispatch(sendMessageFailure(err.message));
   }
 };

@@ -27,13 +27,13 @@ const Slider = () => {
               <br />
               Data Protection
             </h1>
-            <p className="hero-description global-text">
+            {/* <p className="hero-description global-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
               corrupti quaerat itaque inventore perferendis in, eos ex
               repellendus debitis pariatur aliquid vero, optio assumenda. Itaque
               minus rerum reiciendis atque maxime.
-            </p>
-            <button className="hero-btn">Get Started</button>
+            </p> */}
+            {/* <button className="hero-btn">Get Started</button> */}
           </div>
           <div className="col-md-5">
             <div className="d-flex flex-column">
@@ -58,6 +58,22 @@ const Slider = () => {
             <div className="moving-circles" />
           </div>
         </div>
+      </div>
+      <div className="container provided-products">
+        <h5>Pentesting Products</h5>
+        <h2>Products We Provide</h2>
+        <p className="global-text">
+          A penetration test, or pen test, is the simulation of a cyber attack.
+          The goal is to assess a network’s security to improve it and thus
+          prevent exploits by real threat actors by fixing vulnerabilities. This
+          critical IT security practice isn’t the same as a vulnerability
+          assessment or vulnerability scanning, though, as pen testing involves
+          an actual attack similar to what hackers would do in real-world
+          conditions. Pen tests are often performed by third parties, but as
+          these outside tests can be expensive and become dated quickly, many
+          organizations perform their own tests with pen testing tools, using
+          their own IT personnel for their red teams (attackers).
+        </p>
       </div>
     </>
   );

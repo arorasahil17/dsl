@@ -9,6 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogout = () => {
+    navigate("/");
     dispatch(logoutUser(navigate));
   };
 
@@ -80,9 +81,9 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="." className="nav-link">
+                  <Link to="/contact" className="nav-link">
                     Contact
-                  </a>
+                  </Link>
                 </li>
 
                 {/* {user === null ? (

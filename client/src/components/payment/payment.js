@@ -29,10 +29,10 @@ const Payment = () => {
               <div className="em-bar" />
             </div>
           </div>
-          <p className="text-center global-text" style={{ fontSize: 16 }}>
+          {/* <p className="text-center global-text" style={{ fontSize: 16 }}>
             Phasellus vitae velit sit amet diam semper commodo quis quis libero.
             Morbi consequat arcu augue, molestie faucibus.
-          </p>
+          </p> */}
           <div className="row justify-content-around">
             {products.map((product) => {
               return (

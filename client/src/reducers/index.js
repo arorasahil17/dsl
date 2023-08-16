@@ -32,6 +32,9 @@ import {
   ADMIN_AUTH_REQUEST,
   ADMIN_AUTH_SUCCESS,
   ADMIN_AUTH_FAILURE,
+  SEND_MESSAGE_REQUEST,
+  SEND_MESSAGE_SUCCESS,
+  SEND_MESSAGE_FAILURE,
 } from "../actions/index";
 
 const initialStateUser = {
@@ -59,6 +62,12 @@ const initialStateAdmin = {
   admin: null,
   isLoading: false,
   success: null,
+  error: null,
+};
+
+const initialStateMessage = {
+  isLoading: false,
+  sent: false,
   error: null,
 };
 
@@ -243,4 +252,38 @@ const adminReducer = (state = initialStateAdmin, action) => {
   }
 };
 
-export { userReducer, productReducer, paymentReducer, adminReducer };
+const messageReducer = (state = initialStateMessage, action) => {
+  switch (action.type) {
+    case SEND_MESSAGE_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        sent: false,
+        error: null,
+      };
+    case SEND_MESSAGE_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        sent: true,
+        error: null,
+      };
+    case SEND_MESSAGE_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        sent: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export {
+  userReducer,
+  productReducer,
+  paymentReducer,
+  adminReducer,
+  messageReducer,
+};

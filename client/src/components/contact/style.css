@@ -1,0 +1,105 @@
+.contact-row {
+  margin: 200px 0px;
+}
+
+.contact-form .contact-input {
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: #6a6a6a;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  height: 46px;
+  outline: none;
+  padding-top: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 30px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+textarea {
+  height: 100px;
+  padding: 20px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  color: #6a6a6a;
+  border: 1px solid #ddd;
+}
+/* .text-area {
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: #6a6a6a;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  height: 46px;
+  outline: none;
+  padding-top: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 30px;
+} */
+.send-msg {
+  margin-top: 20px;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #7744d9;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.5s;
+}
+
+.contact-content h5 {
+  font-size: 15px;
+  color: #7744d9;
+}
+.contact-content h2 {
+  color: #1e1e1e;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.contact-content p {
+  font-size: 14px;
+  color: #6a6a6a;
+}
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  background-color: #7744d9;
+  border-radius: 50%;
+  color: #fff;
+  margin-right: 15px;
+  font-size: 16px;
+}

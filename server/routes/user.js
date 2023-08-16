@@ -7,6 +7,7 @@ const {
   loginUser,
   checkAuth,
   updateProfile,
+  sendMessage,
 } = require("../controller/user");
 
 router
@@ -15,6 +16,7 @@ router
   .post("/auth", checkAuth)
   .put("/update/profile/:id", updateProfile)
   .post("/verify/otp", verifyOtp)
-  .post("/logout", logout);
+  .post("/logout", logout)
+  .post("/send/messsage", sendMessage);
 
 module.exports = router;

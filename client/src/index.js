@@ -6,7 +6,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import Home from "./pages/home";
 import About from "./pages/about";
 import LoginPage from "./pages/loginPage";
-import { adminReducer, productReducer, userReducer } from "./reducers";
+import {
+  adminReducer,
+  messageReducer,
+  productReducer,
+  userReducer,
+} from "./reducers";
 import { Provider } from "react-redux";
 import OtpPage from "./pages/otpPage";
 import PaymentPage from "./pages/paymentPage";
@@ -17,12 +22,14 @@ import AdminMain from "./components/admin/home/home";
 import AllProducts from "./components/admin/products/allProducts";
 import AddProduct from "./components/admin/products/addProduct";
 import AdminLogin from "./components/admin/login";
+import ContactPage from "./pages/contactPage";
 
 const store = configureStore({
   reducer: {
     user: userReducer,
     product: productReducer,
     admin: adminReducer,
+    message: messageReducer,
   },
 });
 
@@ -40,6 +47,7 @@ root.render(
             <Route path="products" element={<PaymentPage />} />
             <Route path="success" element={<SuccessPage />} />
             <Route path="my/account" element={<ProfilePage />} />
+            <Route path="contact" element={<ContactPage />} />
           </Route>
           <Route path="admin" element={<Layout />}>
             <Route index element={<AdminMain />} />

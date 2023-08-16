@@ -229,6 +229,37 @@ const getUsers = async (req, res) => {
   }
 };
 
+const sendMessage = async (req, res) => {
+  try {
+    const { name, email, contact, message } = req.body;
+
+    const mailOptions = {
+      from: process.env.EMAIL_ADDRESS,
+      to: "sahilbhuddi232@gmail.com",
+      subject: "New Contact Message",
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Contact: ${contact}
+        
+        Message: ${message}
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    res.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({
+        success: false,
+        error: "An error occurred while sending the message.",
+      });
+  }
+};
+
 module.exports = {
   registerUser,
   verifyOtp,
@@ -237,4 +268,5 @@ module.exports = {
   checkAuth,
   updateProfile,
   getUsers,
+  sendMessage,
 };

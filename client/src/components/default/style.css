@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 
 :root {
   ---main-color: #7744d9;
-  ---global-text-color: #7a7a7a;
+  ---global-text-color: #6a6a6a;
 }
 
 body {
@@ -204,6 +204,21 @@ footer {
     /* Adjust the overlay background color for mobile devices */
     background-color: rgba(41, 52, 92, 0.8);
   }
+}
+
+.provided-products {
+  margin-top: 150px;
+}
+.provided-products h5 {
+  font-size: 15px;
+  color: #7744d9;
+}
+.provided-products p {
+  font-size: 14px;
+}
+.provided-products h2 {
+  font-size: 32px;
+  font-weight: 600;
 }
 /* hero bg */
 

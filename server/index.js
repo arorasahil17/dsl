@@ -1,15 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const server = express();
+const path = require("path");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user");
 const paymentRouter = require("./routes/payment");
 const productRouter = require("./routes/product");
 const adminRouter = require("./routes/admin");
-const authMiddleware = require("./middleware/auth");
 const cors = require("cors");
 const session = require("express-session");
-const cookieParser = require("cookie-parser");
 const port = 9000;
 
 async function main() {
@@ -30,9 +29,16 @@ server.use(
   })
 );
 
+server.use(express.static(path.join(__dirname, "build")));
+
+server.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 server.use(express.json());
 server.use("/", adminRouter);
 server.use("/", userRouter);
 server.use("/", productRouter);
-server.use("/", authMiddleware, paymentRouter);
+server.use("/", paymentRouter);
+
 server.listen(port, () => console.log(`Server is listening on ${port}`));
