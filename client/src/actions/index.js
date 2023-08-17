@@ -215,7 +215,7 @@ export const fetchingProductsFailure = (error) => {
 export const fetchingProducts = () => async (dispatch) => {
   dispatch(fetchingProductsRequest());
   try {
-    const response = await axios.get("/products");
+    const response = await axios.get("/get/products");
     const product = response.data;
     dispatch(fetchingProductsSuccess(product));
   } catch (err) {

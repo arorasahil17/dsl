@@ -137,7 +137,8 @@ body {
 .do-col {
   padding: 65px 33px 25px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: 21rem;
+  width: 100%;
+  max-width: 21rem;
   position: relative;
   display: flex;
   flex-direction: column;

@@ -12,7 +12,7 @@ const session = require("express-session");
 const port = 9000;
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/dsl");
+  await mongoose.connect(process.env.MONGO_URL);
   console.log("Database Connected!");
 }
 
