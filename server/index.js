@@ -29,10 +29,14 @@ server.use(
   })
 );
 
-server.use(express.static(path.join(__dirname, "build")));
+// server.use(express.static(path.join(__dirname, "build")));
+
+// server.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 server.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.send("Server is started on netlfiy!");
 });
 
 server.use(express.json());

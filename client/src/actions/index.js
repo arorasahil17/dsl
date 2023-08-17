@@ -1,5 +1,6 @@
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:9000";
+// axios.defaults.baseURL = "http://localhost:9000";
+axios.defaults.baseURL = "https://data-shields-lab.onrender.com";
 
 // Action types
 export const AUTH_REQUEST = "AUTH_REQUEST";
