@@ -4,7 +4,6 @@ const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const createPayment = async (req, res) => {
   const id = req.params.id;
-  console.log(id);
   const product = req.body;
   const amountInRuppe = product.price * 100;
   try {

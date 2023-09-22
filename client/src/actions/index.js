@@ -1,8 +1,8 @@
 import axios from "axios";
-// axios.defaults.baseURL = "http://localhost:9000";
+//* axios.defaults.baseURL = "http://localhost:9000";
 axios.defaults.baseURL = "https://data-shields-lab.onrender.com";
 
-// Action types
+//! Action types
 export const AUTH_REQUEST = "AUTH_REQUEST";
 export const AUTH_SUCCESS = "AUTH_SUCCESS";
 export const AUTH_FAILURE = "AUTH_FAILURE";
@@ -89,7 +89,6 @@ export const registerUser = (userData, navigate) => async (dispatch) => {
     dispatch(registerSuccess(user));
     const token = response.data.user.token;
     localStorage.setItem("token", token);
-
     navigate("/otp");
   } catch (error) {
     console.log(error.response.data.message);
@@ -116,7 +115,6 @@ export const loginUser = (userData, navigate) => async (dispatch) => {
     const user = response.data.user;
     dispatch(loginSuccess(user));
     const token = response.data.user.token;
-
     localStorage.setItem("token", token);
     navigate("/");
   } catch (error) {
@@ -200,6 +198,7 @@ export const updateUser = (userData, id) => async (dispatch) => {
   }
 };
 
+//? get products api
 export const fetchingProductsRequest = () => ({
   type: FETCHING_PRODUCT_REQUEST,
 });
@@ -224,6 +223,7 @@ export const fetchingProducts = () => async (dispatch) => {
   }
 };
 
+//* payment make api
 export const paymentRequest = () => ({ type: PAYMENT_REQUEST });
 
 export const paymentInitiateSuccess = (paymentURL) => ({
@@ -254,7 +254,7 @@ export const paymentInitiate = (product, id, navigate) => async (dispatch) => {
       navigate("/login");
     }
   } catch (error) {
-    // Handle errors, including the case when the user is not authenticated
+    //! Handle errors, including the case when the user is not authenticated
     if (error.response && error.response.status === 401) {
       navigate("/login");
     } else {
@@ -264,6 +264,7 @@ export const paymentInitiate = (product, id, navigate) => async (dispatch) => {
   }
 };
 
+//! add product api
 export const addProductRequest = () => ({ type: ADD_PRODUCT_REQUEST });
 
 export const addProductSuccess = (product) => ({
@@ -291,6 +292,7 @@ export const addProduct = (productData) => async (dispatch) => {
   }
 };
 
+//? admin login api
 export const adminLoginRequest = () => ({ type: ADMIN_LOGIN_REQUEST });
 
 export const adminLoginSuccess = (adminDetails) => ({
@@ -319,6 +321,7 @@ export const adminLogin = (adminData, navigate) => async (dispatch) => {
   }
 };
 
+//todo admin login authentication
 export const adminAuthRequest = () => ({ type: ADMIN_AUTH_REQUEST });
 
 export const adminAuthSuccess = (adminDetails) => ({
@@ -352,6 +355,7 @@ export const adminAuth = (navigate) => async (dispatch) => {
   }
 };
 
+//* send user message api
 export const sendMessageRequest = () => ({ type: SEND_MESSAGE_REQUEST });
 
 export const sendMessageSuccess = () => ({ type: SEND_MESSAGE_SUCCESS });

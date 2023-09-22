@@ -17,14 +17,19 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg" id="navbar">
         <div className="container-fluid">
-          <a className="navbar-brand" href=".">
+          <Link className="navbar-brand d-flex align-items-center" to="/">
             <img
-              src="https://wp.ditsolution.net/cyber/wp-content/uploads/2022/01/logo-1.png"
+              src="images/dsl-logo-purple.png"
               alt="Bootstrap"
               width={120}
-              height={50}
+              height={55}
+              style={{ objectFit: "contain" }}
             />
-          </a>
+            <h3 style={{ fontSize: "20px", marginLeft: "-20px" }}>
+              Data Shields Labs
+            </h3>
+          </Link>
+
           <button
             className="navbar-toggler"
             type="button"

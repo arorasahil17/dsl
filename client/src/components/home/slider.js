@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./style.css";
+
 const Slider = () => {
   useEffect(() => {
     // Add your circle animation logic here
@@ -16,12 +17,13 @@ const Slider = () => {
       movingCircles.appendChild(circle);
     }
   }, []);
+
   return (
     <>
       <div className="container hero-container">
         <div className="row gap-5 justify-content-center hero-row mt-5">
           <div className="col-md-5 hero-col">
-            <p className="hero-subtitle mt-3">Modern. Professional. Realable</p>
+            <p className="hero-subtitle mt-3">Data Shields Lab</p>
             <h1 className="hero-title">
               <b style={{ letterSpacing: 1 }}>Get Enhance Security of </b>{" "}
               <br />

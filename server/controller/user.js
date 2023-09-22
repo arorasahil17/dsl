@@ -124,6 +124,37 @@ const verifyOtp = async (req, res) => {
   }
 };
 
+const resendOtp = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    const newOtp = generateOTP();
+    const newOtpExpiration = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes from now
+
+    user.verificationOTP = newOtp;
+    user.verificationOTPExpiresAt = newOtpExpiration;
+    await user.save();
+
+    const mailOptions = {
+      from: process.env.EMAIL_ADDRESS,
+      to: email,
+      subject: "New OTP for Verification",
+      text: `Your new OTP for registration is: ${newOtp}`,
+      html: `<p>Your new OTP for registration is: <strong>${newOtp}</strong></p>`,
+    };
+    await transporter.sendMail(mailOptions);
+
+    res.json({
+      success: true,
+      message: "New OTP sent successfully. Please check your email.",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 const loginUser = async (req, res) => {
   try {
     const { emailLogin, passwordLogin } = req.body;
@@ -251,18 +282,17 @@ const sendMessage = async (req, res) => {
     res.json({ success: true });
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({
-        success: false,
-        error: "An error occurred while sending the message.",
-      });
+    res.status(500).json({
+      success: false,
+      error: "An error occurred while sending the message.",
+    });
   }
 };
 
 module.exports = {
   registerUser,
   verifyOtp,
+  resendOtp,
   logout,
   loginUser,
   checkAuth,

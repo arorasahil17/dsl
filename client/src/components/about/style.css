@@ -397,7 +397,17 @@ footer {
 .footer-logo {
   background-color: transparent;
   border: none;
+  width: 120px;
+  object-fit: contain;
+  height: 60px;
+  margin-left: -36px;
 }
+.logo-container-footer h3 {
+  color: #7744d9;
+  margin-left: -30px !important;
+  margin-top: 10px;
+}
+
 .footer-p {
   font-size: 14px;
 }
@@ -416,6 +426,7 @@ footer {
 }
 .footer-icon {
   color: #616161;
+  margin: 0 4px;
 }
 
 @media screen and (max-width: 767px) {

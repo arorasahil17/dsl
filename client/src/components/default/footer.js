@@ -6,11 +6,14 @@ const Footer = () => {
         <div className="container">
           <div className="row justify-content-center gap-5">
             <div className="col-md-3">
-              <img
-                src="images/logo-1.png"
-                className="img-thumbnail footer-logo"
-                alt=""
-              />
+              <div className="logo-container-footer d-flex align-items-center">
+                <img
+                  src="images/dsl-logo-purple.png"
+                  className="img-thumbnail footer-logo"
+                  alt=""
+                />
+                <h3 style={{ fontSize: "20px" }}>Data Shields Labs</h3>
+              </div>
               <p
                 className="global-text footer-p"
                 style={{ textAlign: "justify", textJustify: "inter-word" }}
